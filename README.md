@@ -1,14 +1,24 @@
+<p align="center">
+    <img src=".github/23g.svg" alt="23G">
+</p>
+
 # zxcvbn-php-nl
 
 - Plugin for [Zxcvbn-PHP](https://github.com/bjeavons/zxcvbn-php), containing Dutch dictionaries
 - Dictionaries were pulled from [pepve/zxcvbn-nl](https://github.com/pepve/zxcvbn-nl)
 
-Usage:
+## Usage
+
 ```php
-$zxcvbn = new ZxcvbnPhp\Zxcvbn();
-$zxcvbn->addMatcher(ZxcvbnPhp\Matchers\NL\DutchDictionaryMatch::class);
-$zxcvbn->addMatcher(ZxcvbnPhp\Matchers\NL\DutchReverseDictionaryMatch::class);
+use ZxcvbnPhp\Matchers\NL\DutchDictionaryMatch;
+use ZxcvbnPhp\Matchers\NL\DutchReverseDictionaryMatch;
+use ZxcvbnPhp\Zxcvbn;
+
+$zxcvbn = new Zxcvbn();
+$zxcvbn->addMatcher(DutchDictionaryMatch::class);
+$zxcvbn->addMatcher(DutchReverseDictionaryMatch::class);
 
 ...
-$zxcvbn->passwordStrength('password');
+
+$result = $zxcvbn->passwordStrength('password');
 ```
