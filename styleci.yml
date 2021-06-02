@@ -1,0 +1,9 @@
+preset: psr12
+
+risky: true
+
+finder:
+  exclude:
+    - resources
+    - vendor
+  name: "*.php"
